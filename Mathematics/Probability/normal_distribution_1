@@ -1,0 +1,21 @@
+from __future__ import division
+import scipy.stats as ss
+
+mean = 30
+std_dev = 4
+
+pb = ss.norm(loc = mean, scale = std_dev)
+
+a_prob = 40
+b_prob = 21
+c_prob = 30
+d_prob = 35
+
+pb_1 = ss.norm.cdf(a_prob, loc = mean, scale = std_dev)
+pb_2 = ss.norm.cdf(b_prob, loc = mean, scale = std_dev)
+pb_3 = ss.norm.cdf(c_prob, loc = mean, scale = std_dev)
+pb_4 = ss.norm.cdf(d_prob, loc = mean, scale = std_dev)
+
+print round(pb_1, 3)
+print 1 - round(pb_2, 3)
+print round(pb_4 - pb_3,3)
